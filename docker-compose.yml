@@ -65,6 +65,7 @@ services:
       - "5050:5050"
     volumes:
       - branding_data:/app/app/static/branding
+      - menu_images_data:/app/app/static/menu_images
     healthcheck:
       test: ["CMD", "python", "-c", "import socket; s=socket.socket(); s.settimeout(2); s.connect(('127.0.0.1', 5050)); s.close()"]
       interval: 10s
@@ -111,3 +112,4 @@ services:
 volumes:
   postgres_data:
   branding_data:
+  menu_images_data:
